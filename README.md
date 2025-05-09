@@ -34,10 +34,6 @@ A simple and efficient **Inventory & Billing System** designed using Python and 
 
 ---
 
-💯 Sare Mona! 💻 **Technologies Used** section ni inka 👌 attractive ga, clear ga elaborate cheyyadam jarigindi. Ikkada final update 👇
-
----
-
 ## 🧑‍💻 Technologies Used
 
 * 🐍 **Python**
@@ -107,4 +103,5 @@ Enter your choice: _
 ```
 
 ---
-
+## CREATED BY
+Gundugollu Mohana Venkata Achuta Lakshmi (Self-Initiated Project)
