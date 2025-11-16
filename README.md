@@ -1,62 +1,75 @@
----
+# ☕ Café Management System – Python + MySQL
 
-# ☕ Cafe Management System
-
-A simple and efficient **Inventory & Billing System** designed using Python and MySQL for managing daily cafe operations. Now enhanced with a 🔐 **Role-Based Login System** for secure access control.
+A simple and efficient **Inventory & Billing System** built using **Python** and **MySQL**, designed to manage daily café operations.  
+Now enhanced with a **🔐 Role-Based Login System** for secure and structured access.
 
 ---
 
 ## 🚀 Features
 
-* 🔐 **Role-Based Login System**
-  Admin and Staff login with restricted access based on roles.
+### 🔐 Role-Based Login System
+- Admin and Staff login  
+- Role restrictions applied automatically  
+- Admin → full control  
+- Staff → order/billing only  
 
-* 📋 **Inventory Management**
-  Add, update, delete items and track stock in real time.
+### 📋 Inventory Management
+- Add items  
+- Update price/quantity  
+- Delete items  
+- View stock in real time  
 
-* 💰 **Order Processing & Billing**
-  Generate bills instantly with item-wise breakdown.
+### 💰 Order Processing & Billing
+- Generate customer bills  
+- Item-wise bill breakdown  
+- Total with quantity calculation  
 
-* 📊 **Sales & Inventory Reports**
-  Admins can generate daily reports to monitor sales and stock levels.
+### 📊 Sales & Inventory Reports
+- Daily sales reports  
+- Stock status  
+- Admin-only access  
 
-* 🛠️ **CRUD Operations**
-  Full Create, Read, Update, Delete support for inventory items.
+### 🛠️ CRUD Operations
+- Full Create, Read, Update, Delete support using MySQL  
 
 ---
 
 ## 👩‍💼 Roles & Access
 
-| Role  | Access                                           |
-| ----- | ------------------------------------------------ |
-| Admin | Inventory Management, Sales Reports, Full Access |
-| Staff | Take Orders, Generate Bills                      |
+| Role   | Access                                      |
+|--------|----------------------------------------------|
+| Admin  | Inventory, Reports, Full Access              |
+| Staff  | Order Taking, Billing Only                   |
 
 ---
 
 ## 🧑‍💻 Technologies Used
 
-* 🐍 **Python**
-  Used as the core programming language to build the logic for inventory, billing, user interface, and file handling.
+### 🐍 Python  
+Used for business logic, billing system, menu interface, file handling.
 
-* 🛢️ **MySQL**
-  Backend relational database system for storing user credentials, item data, and transaction records securely.
+### 🛢️ MySQL  
+Relational database storing:  
+- User credentials  
+- Items & stock  
+- Sales records  
+- Transaction history  
 
-* 🧮 **SQL Queries**
-  Used for performing CRUD operations (INSERT, SELECT, UPDATE, DELETE) on the MySQL database.
+### 🧮 SQL Queries  
+Used for CRUD operations (INSERT, SELECT, UPDATE, DELETE).
 
-* 🔁 **CRUD Operations**
-  Full support for managing the inventory — adding new items, updating prices/quantities, deleting items, and viewing all products.
+### 🔐 Login Authentication  
+Role-based access implemented using a secure credential check.
 
-* 🔐 **Login Authentication System**
-  Role-based authentication implemented to allow **Admins** full control and **Staff** limited access (like order billing).
+### 🖥️ Modular Programming  
+Separated into multiple Python modules for clean maintainable code:
+- auth.py  
+- inventory.py  
+- order.py  
+- report.py  
 
-* 🖥️ **Modular Programming**
-  Separated functionalities into different Python files like `auth.py`, `inventory.py`, `order.py`, etc., for clean code structure and easy maintenance.
-
-* 📈 **Console-based Interface**
-  Interactive terminal menu system designed for both Admins and Staff to perform operations smoothly without GUI.
-
+### 📈 Console-Based UI  
+Smooth text-based interface for both Admin & Staff.
 
 ---
 
@@ -65,32 +78,32 @@ A simple and efficient **Inventory & Billing System** designed using Python and 
 ```
 CafeManagementSystem/
 │
-├── main.py                  # Main executable file
-├── db_config.py             # MySQL database connection setup
-├── auth.py                  # Role-based login logic
-├── inventory.py             # CRUD operations for inventory
-├── order.py                 # Billing and order handling
-├── report.py                # Sales and inventory reports
-├── schema.sql               # SQL script to create tables
-├── README.md                # Project overview
-└── requirements.txt         # Dependencies (if any)
+├── main.py            # Main executable file
+├── db_config.py       # MySQL database connection setup
+├── auth.py            # Role-based login logic
+├── inventory.py       # CRUD operations for inventory
+├── order.py           # Billing and order handling
+├── report.py          # Sales and inventory reports
+├── schema.sql         # SQL script to create DB tables
+├── README.md          # Documentation
+└── requirements.txt   # Dependencies (if any)
 ```
 
 ---
 
 ## 🧪 Sample Users
 
-| Username | Password | Role  |
-| -------- | -------- | ----- |
-| admin    | admin123 | admin |
-| staff    | staff123 | staff |
+| Username | Password  | Role  |
+|----------|-----------|-------|
+| admin    | admin123  | admin |
+| staff    | staff123  | staff |
 
 ---
 
 ## 📸 Sample Output
 
-```bash
-Welcome to Cafe Management System ☕
+```
+Welcome to Café Management System ☕
 Enter username: admin
 Enter password: ******
 Login successful as admin!
@@ -103,5 +116,9 @@ Enter your choice: _
 ```
 
 ---
-## CREATED BY
-Gundugollu Mohana Venkata Achuta Lakshmi (Self-Initiated Project)
+
+## ✨ Created By  
+**Gundugollu Mohana Venkata Achuta Lakshmi**  
+*(Self-Initiated Project)*
+
+🌟 If you like this project, give it a **star ⭐**!
