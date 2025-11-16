@@ -91,6 +91,12 @@ CafeManagementSystem/
 
 ---
 
+##  🖥️ Console Output Example
+
+
+![Output Screenshot](assets/output.png)
+
+
 ## 🧪 Sample Users
 
 | Username | Password  | Role  |
