@@ -104,7 +104,7 @@ CafeServe_POS/
 
 ---
 
-## 🖥️ Console Output (Real Execution Screenshot)
+## 🖥️ Console Output
 
 ![Output Screenshot](assets/output.png)
 
