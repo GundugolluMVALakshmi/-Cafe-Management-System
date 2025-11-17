@@ -1,46 +1,79 @@
+# main.py
+from db_config import init_db
 from auth import login
 from inventory import add_item, view_inventory, update_item, delete_item
 from order import take_order
 from report import sales_report
 
-def admin_menu():
+def manage_inventory():
     while True:
-        print("1. View Inventory\n2. Add Item\n3. Update Item\n4. Delete Item\n5. View Sales Report\n6. Logout")
-        choice = input("Enter your choice: ")
-
-        if choice == '1':
+        print("\nInventory Management")
+        print("1. List Items")
+        print("2. Add Item")
+        print("3. Update Item")
+        print("4. Delete Item")
+        print("5. Back")
+        c = input("Enter choice: ").strip()
+        if c == "1":
             view_inventory()
-        elif choice == '2':
+        elif c == "2":
             add_item()
-        elif choice == '3':
+        elif c == "3":
             update_item()
-        elif choice == '4':
+        elif c == "4":
             delete_item()
-        elif choice == '5':
-            sales_report()
-        elif choice == '6':
+        elif c == "5":
             break
         else:
-            print("Invalid choice!\n")
+            print("Invalid choice")
+
+def admin_menu():
+    while True:
+        print("\nAdmin Menu")
+        print("1. Manage Inventory")
+        print("2. View Reports")
+        print("3. Logout")
+        c = input("Enter choice: ").strip()
+        if c == "1":
+            manage_inventory()
+        elif c == "2":
+            sales_report()
+        elif c == "3":
+            break
+        else:
+            print("Invalid choice")
 
 def staff_menu():
     while True:
-        print("1. Take Order\n2. View Inventory\n3. Logout")
-        choice = input("Enter your choice: ")
-
-        if choice == '1':
+        print("\nStaff Menu")
+        print("1. Take Order")
+        print("2. View Inventory")
+        print("3. Logout")
+        c = input("Enter choice: ").strip()
+        if c == "1":
             take_order()
-        elif choice == '2':
+        elif c == "2":
             view_inventory()
-        elif choice == '3':
+        elif c == "3":
             break
         else:
-            print("Invalid choice!\n")
+            print("Invalid choice")
+
+def main():
+    init_db()
+    print("Welcome to Cafe Management System ☕\n")
+    while True:
+        role = login()
+        if role == "admin":
+            admin_menu()
+            break
+        elif role == "staff":
+            staff_menu()
+            break
+        else:
+            retry = input("Try again? (y/n): ").strip().lower()
+            if retry != 'y':
+                break
 
 if __name__ == "__main__":
-    print("Welcome to Cafe Management System ☕\n")
-    role = login()
-    if role == "admin":
-        admin_menu()
-    elif role == "staff":
-        staff_menu()
+    main()
