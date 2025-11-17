@@ -1,7 +1,7 @@
-# ☕ Café Management System – Python + MySQL
+# ☕ Café Management System – Python + SQLite
 
-A simple and efficient **Inventory & Billing System** built using **Python** and **MySQL**, designed to manage daily café operations.  
-Now enhanced with a **🔐 Role-Based Login System** for secure and structured access.
+A simple and efficient **Inventory & Billing System** built using **Python** and **SQLite**, designed to manage daily café operations.  
+Now enhanced with a **🔐 Role-Based Login System** for secure, role-based access.
 
 ---
 
@@ -9,104 +9,107 @@ Now enhanced with a **🔐 Role-Based Login System** for secure and structured a
 
 ### 🔐 Role-Based Login System
 - Admin and Staff login  
-- Role restrictions applied automatically  
-- Admin → full control  
-- Staff → order/billing only  
+- Role-based restricted access  
+- Admin → Full control  
+- Staff → Orders + View Inventory  
 
-### 📋 Inventory Management
+---
+
+## 📋 Inventory Management
 - Add items  
-- Update price/quantity  
+- Update item price & quantity  
 - Delete items  
-- View stock in real time  
+- View all items  
+- Quantity validation during billing  
 
-### 💰 Order Processing & Billing
-- Generate customer bills  
-- Item-wise bill breakdown  
-- Total with quantity calculation  
+---
 
-### 📊 Sales & Inventory Reports
-- Daily sales reports  
-- Stock status  
+## 💰 Order Processing & Billing
+- Create customer orders  
+- Auto-calculate total price  
+- Update inventory stock  
+- Save order history in SQLite  
+
+---
+
+## 📊 Sales & Inventory Reports
+- View all completed orders  
+- Calculate total sales  
 - Admin-only access  
 
-### 🛠️ CRUD Operations
-- Full Create, Read, Update, Delete support using MySQL  
+---
+
+## 🛠️ CRUD Operations
+- Full Create, Read, Update, Delete support  
+- SQLite database (`cafe.db`) auto-created  
 
 ---
 
 ## 👩‍💼 Roles & Access
 
-| Role   | Access                                      |
-|--------|----------------------------------------------|
-| Admin  | Inventory, Reports, Full Access              |
-| Staff  | Order Taking, Billing Only                   |
+- **Admin** → Full Access (Inventory, Reports, Orders)  
+- **Staff** → Limited Access (Take Orders, View Inventory)  
+
+---
+
+## 🧪 Sample Users
+
+| Username | Password | Role  |
+|----------|----------|--------|
+| admin    | admin123 | admin |
+| staff    | staff123 | staff |
 
 ---
 
 ## 🧑‍💻 Technologies Used
 
 ### 🐍 Python  
-Used for business logic, billing system, menu interface, file handling.
+Used for all business logic, authentication, menus, billing.
 
-### 🛢️ MySQL  
-Relational database storing:  
-- User credentials  
-- Items & stock  
-- Sales records  
-- Transaction history  
+### 🗄️ SQLite  
+Used to store:  
+- Users  
+- Inventory items  
+- Orders  
+- Sales history  
 
-### 🧮 SQL Queries  
-Used for CRUD operations (INSERT, SELECT, UPDATE, DELETE).
-
-### 🔐 Login Authentication  
-Role-based access implemented using a secure credential check.
-
-### 🖥️ Modular Programming  
-Separated into multiple Python modules for clean maintainable code:
-- auth.py  
-- inventory.py  
-- order.py  
-- report.py  
-
-### 📈 Console-Based UI  
-Smooth text-based interface for both Admin & Staff.
+### 📦 Modular Code Structure
+- `auth.py` – Authentication + Roles  
+- `inventory.py` – CRUD operations  
+- `order.py` – Billing logic  
+- `report.py` – Sales reporting  
+- `db_config.py` – SQLite database connection  
+- `main.py` – Application workflow  
 
 ---
 
 ## 🏗️ Folder Structure
 
 ```
-CafeManagementSystem/
+Cafe Management System/
 │
-├── main.py            # Main executable file
-├── db_config.py       # MySQL database connection setup
-├── auth.py            # Role-based login logic
-├── inventory.py       # CRUD operations for inventory
-├── order.py           # Billing and order handling
-├── report.py          # Sales and inventory reports
-├── schema.sql         # SQL script to create DB tables
-├── README.md          # Documentation
-└── requirements.txt   # Dependencies (if any)
+├── main.py                # Main application
+├── db_config.py           # SQLite connection
+├── auth.py                # Login & Roles
+├── inventory.py           # CRUD operations
+├── order.py               # Billing system
+├── report.py              # Sales report
+├── schema.sql             # Old MySQL schema (optional)
+├── README.md              # Documentation
+│
+└── assets/                # Screenshots folder
+    └── output.png         # Real execution screenshot
 ```
 
 ---
 
-##  🖥️ Console Output Example
-
+## 🖥️ Console Output (Real Execution Screenshot)
 
 ![Output Screenshot](assets/output.png)
 
-
-## 🧪 Sample Users
-
-| Username | Password  | Role  |
-|----------|-----------|-------|
-| admin    | admin123  | admin |
-| staff    | staff123  | staff |
-
 ---
 
-## 📸 Sample Output
+## 📸 Terminal Output Example
 
 ```
 Welcome to Café Management System ☕
@@ -123,8 +126,27 @@ Enter your choice: _
 
 ---
 
+## ▶️ How to Run
+
+### 1️⃣ Optional: Install dependencies  
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2️⃣ Run the application
+
+```bash
+python main.py
+```
+
+`cafe.db` will be auto-created with required tables.
+
+---
+
 ## ✨ Created By  
-**Gundugollu Mohana Venkata Achuta Lakshmi**  
-*(Self-Initiated Project)*
+**Gundugollu Mohana Venkata Achuta Lakshmi**
+
+*(Self-Initiated Project)*  
 
 🌟 If you like this project, give it a **star ⭐**!
