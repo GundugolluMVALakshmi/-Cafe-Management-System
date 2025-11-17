@@ -87,7 +87,7 @@ Used to store:
 ## 🏗️ Folder Structure
 
 ```
-Cafe Management System/
+CafeServe_POS/
 │
 ├── main.py                # Main application
 ├── db_config.py           # SQLite connection
