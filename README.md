@@ -1,7 +1,9 @@
 # ☕ CaféServe POS – Python + SQLite
 
+
 CaféServe POS is a clean and efficient **Point-of-Sale & Inventory System** built using **Python** and **SQLite**, designed to manage daily café operations.
 Includes billing, inventory, order tracking, reports, and a secure **🔐 Role-Based Login System**.
+
 ---
 
 ## 🚀 Features
@@ -111,7 +113,7 @@ Cafe Management System/
 ## 📸 Terminal Output Example
 
 ```
-Welcome to Café Management System ☕
+Welcome to CaféServe POS ☕
 Enter username: admin
 Enter password: ******
 Login successful as admin!
