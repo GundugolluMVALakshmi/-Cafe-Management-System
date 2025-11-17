@@ -1,19 +1,23 @@
+# auth.py
 from db_config import get_db_connection
 
 def login():
-    username = input("Enter username: ")
-    password = input("Enter password: ")
+    username = input("Enter username: ").strip()
+    password = input("Enter password: ").strip()
 
     conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT role FROM users WHERE username=%s AND password=%s", (username, password))
-    result = cursor.fetchone()
-
+    cur = conn.cursor()
+    cur.execute("SELECT role FROM users WHERE username=? AND password=?", (username, password))
+    row = cur.fetchone()
     conn.close()
 
-    if result:
-        print(f"Login successful as {result[0]}!\n")
-        return result[0]
+    if row:
+        role = row["role"]
+        print(f"Login successful as {role}!\n")
+        return role
     else:
         print("Invalid credentials.\n")
         return None
+
+
+
